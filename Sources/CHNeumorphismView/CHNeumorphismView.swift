@@ -54,7 +54,7 @@ public class CHNeumorphismView: UIView {
         whiteShadowView.translatesAutoresizingMaskIntoConstraints = false
         whiteShadowView.clipsToBounds = true
         whiteShadowView.layer.shadowColor = lightShadowColor != nil ? lightShadowColor?.cgColor : UIColor.white.cgColor
-        whiteShadowView.layer.shadowOpacity = 1
+        whiteShadowView.layer.shadowOpacity = 0.9
         whiteShadowView.layer.shadowOffset = CGSize(width: -10, height: -10)
         whiteShadowView.layer.shadowRadius = 5
         whiteShadowView.layer.shouldRasterize = true
@@ -84,7 +84,7 @@ public class CHNeumorphismView: UIView {
         blackShadowView.translatesAutoresizingMaskIntoConstraints = false
         blackShadowView.clipsToBounds = true
         blackShadowView.layer.shadowColor = darkShadowColor != nil ? darkShadowColor?.cgColor : self.backgroundColor?.makeDarkerColor().cgColor
-        blackShadowView.layer.shadowOpacity = 0.9
+        blackShadowView.layer.shadowOpacity = 0.5
         blackShadowView.layer.shadowOffset = CGSize(width: 10, height: 10)
         blackShadowView.layer.shadowRadius = 5
         blackShadowView.layer.shouldRasterize = true
@@ -111,7 +111,7 @@ public class CHNeumorphismView: UIView {
         whiteShadowView.translatesAutoresizingMaskIntoConstraints = false
         whiteShadowView.clipsToBounds = true
         whiteShadowView.layer.shadowColor = lightShadowColor != nil ? lightShadowColor?.cgColor : UIColor.white.cgColor
-        whiteShadowView.layer.shadowOpacity = 0.8
+        whiteShadowView.layer.shadowOpacity = 0.9
         whiteShadowView.layer.shadowOffset = CGSize(width: -10, height: -10)
         whiteShadowView.layer.shadowRadius = 5
         whiteShadowView.layer.shouldRasterize = true
@@ -190,7 +190,7 @@ fileprivate extension UIColor {
     func makeDarkerColor(alpha: CGFloat = 1.0) -> UIColor {
         let h = self.hsl.hue / 360.0
         var s = self.hsl.saturation / 100 > 0.3 ? 0.3 : 0.0
-        let l = self.hsl.lightness / 100 - 0.2
+        let l = self.hsl.lightness / 100 - 0.3
         
         let t = s * ((l < 0.5) ? l : (1.0 - l))
         let b = l + t
