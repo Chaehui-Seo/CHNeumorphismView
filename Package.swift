@@ -21,8 +21,5 @@ let package = Package(
         .target(
             name: "CHNeumorphismView",
             dependencies: []),
-        .testTarget(
-            name: "CHNeumorphismViewTests",
-            dependencies: ["CHNeumorphismView"]),
     ]
 )
