@@ -15,35 +15,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="slE-1N-9FA" customClass="CHNeumorphismView" customModule="CHNeumorphismView">
-                                <rect key="frame" x="96.666666666666686" y="159" width="200" height="200"/>
-                                <color key="backgroundColor" red="0.92156862745098034" green="0.95294117647058818" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="slE-1N-9FA" secondAttribute="height" multiplier="1:1" id="Qv2-Ig-DYp"/>
-                                    <constraint firstAttribute="width" constant="200" id="prI-qA-t14"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cY-zc-u5q" customClass="CHNeumorphismView" customModule="CHNeumorphismView">
-                                <rect key="frame" x="96.666666666666686" y="409" width="200" height="200"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="J68-5C-G7K"/>
-                                    <constraint firstAttribute="width" secondItem="6cY-zc-u5q" secondAttribute="height" multiplier="1:1" id="Vtn-gb-2sc"/>
-                                </constraints>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CjD-q7-Ybz">
+                                <rect key="frame" x="96.666666666666686" y="228.66666666666663" width="200" height="420"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="slE-1N-9FA" customClass="CHNeumorphismView" customModule="CHNeumorphismView">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.92156862745098034" green="0.95294117647058818" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="slE-1N-9FA" secondAttribute="height" multiplier="1:1" id="Qv2-Ig-DYp"/>
+                                            <constraint firstAttribute="width" constant="200" id="prI-qA-t14"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cY-zc-u5q" customClass="CHNeumorphismView" customModule="CHNeumorphismView">
+                                        <rect key="frame" x="0.0" y="220" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="J68-5C-G7K"/>
+                                            <constraint firstAttribute="width" secondItem="6cY-zc-u5q" secondAttribute="height" multiplier="1:1" id="Vtn-gb-2sc"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="slE-1N-9FA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6yQ-dA-OWB"/>
-                            <constraint firstItem="6cY-zc-u5q" firstAttribute="centerX" secondItem="slE-1N-9FA" secondAttribute="centerX" id="O12-UC-3QM"/>
-                            <constraint firstItem="6cY-zc-u5q" firstAttribute="top" secondItem="slE-1N-9FA" secondAttribute="bottom" constant="50" id="czi-qh-S0M"/>
-                            <constraint firstItem="slE-1N-9FA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="yZh-fD-FMJ"/>
+                            <constraint firstItem="CjD-q7-Ybz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="JQK-7X-7s0"/>
+                            <constraint firstItem="CjD-q7-Ybz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zNq-9t-11U"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="targetView" destination="slE-1N-9FA" id="JZ9-4D-ZQA"/>
-                        <outlet property="targetView2" destination="6cY-zc-u5q" id="6Vh-hz-ggp"/>
+                        <outlet property="targetView2" destination="6cY-zc-u5q" id="meV-EO-wIB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
