@@ -102,7 +102,7 @@ public class CHNeumorphismView: UIView {
         
         let blackShapeLayer = CAShapeLayer()
         blackShapeLayer.path = blackPath.cgPath
-        blackShapeLayer.fillColor = self.superview?.backgroundColor?.cgColor
+        blackShapeLayer.fillColor = UIColor.white.cgColor // This backgroundColor will not be displayed since it is outside of the superView(=self)
         blackShadowView.layer.addSublayer(blackShapeLayer)
         
         // White shadow setting
@@ -129,7 +129,7 @@ public class CHNeumorphismView: UIView {
         
         let whiteShapeLayer = CAShapeLayer()
         whiteShapeLayer.path = whitePath.cgPath
-        whiteShapeLayer.fillColor = self.superview?.backgroundColor?.cgColor
+        whiteShapeLayer.fillColor = UIColor.white.cgColor // This backgroundColor will not be displayed since it is outside of the superView(=self)
         whiteShadowView.layer.addSublayer(whiteShapeLayer)
         
         // Add set shadows
