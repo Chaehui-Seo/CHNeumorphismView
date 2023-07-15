@@ -37,13 +37,13 @@ public class CHNeumorphismView: UIView {
         self.currentLightShadowColor = lightShadowColor
         switch curve {
         case .inside:
-            makeEngravedEffect(darkShadowColor: darkShadowColor, lightShadowColor: lightShadowColor)
+            makeConcaveEffect(darkShadowColor: darkShadowColor, lightShadowColor: lightShadowColor)
         case .outside:
-            makeEmbossedEffect(darkShadowColor: darkShadowColor, lightShadowColor: lightShadowColor)
+            makeConvexEffect(darkShadowColor: darkShadowColor, lightShadowColor: lightShadowColor)
         }
     }
     
-    private func makeEmbossedEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil) {
+    private func makeConvexEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil) {
         blackShadowView.removeFromSuperview()
         whiteShadowView.removeFromSuperview()
         
@@ -86,7 +86,7 @@ public class CHNeumorphismView: UIView {
         ])
     }
     
-    private func makeEngravedEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil) {
+    private func makeConcaveEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil) {
         blackShadowView.removeFromSuperview()
         whiteShadowView.removeFromSuperview()
         
