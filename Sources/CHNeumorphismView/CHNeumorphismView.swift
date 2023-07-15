@@ -4,6 +4,9 @@ public class CHNeumorphismView: UIView {
     private var blackShadowView = UIView()
     private var whiteShadowView = UIView()
     
+    private var currentCurveDirection: CHNeumorphismCurve?
+    private var currentDarkShadowColor: UIColor? = nil
+    private var currentLightShadowColor: UIColor? = nil
     @IBInspectable public var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -12,6 +15,12 @@ public class CHNeumorphismView: UIView {
             layer.cornerRadius = newValue
             blackShadowView.layer.cornerRadius = newValue
             whiteShadowView.layer.cornerRadius = newValue
+            
+            // To make sure the view adjust the changed cornerRadius, in case neumorphismEffect was set before.
+            guard let curve = currentCurveDirection else { return }
+            makeNeumorphismEffect(curve: curve,
+                                  darkShadowColor: currentDarkShadowColor,
+                                  lightShadowColor: currentLightShadowColor)
         }
     }
     
@@ -23,6 +32,9 @@ public class CHNeumorphismView: UIView {
     public func makeNeumorphismEffect(curve: CHNeumorphismCurve,
                                       darkShadowColor: UIColor? = nil,
                                       lightShadowColor: UIColor? = nil) {
+        self.currentCurveDirection = curve
+        self.currentDarkShadowColor = darkShadowColor
+        self.currentLightShadowColor = lightShadowColor
         switch curve {
         case .inside:
             makeEngravedEffect(darkShadowColor: darkShadowColor, lightShadowColor: lightShadowColor)
