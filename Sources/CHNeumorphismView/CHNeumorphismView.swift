@@ -14,6 +14,7 @@ public class CHNeumorphismView: UIView {
     private var currentCurveDirection: CHNeumorphismCurve?
     private var currentDarkShadowColor: UIColor? = nil
     private var currentLightShadowColor: UIColor? = nil
+    private var currentIntensity: CGFloat = 1
     
     // MARK: - Inspectabl Property
     @IBInspectable public var cornerRadius: CGFloat {
@@ -29,7 +30,8 @@ public class CHNeumorphismView: UIView {
             guard let curve = currentCurveDirection else { return }
             makeNeumorphismEffect(curve: curve,
                                   darkShadowColor: currentDarkShadowColor,
-                                  lightShadowColor: currentLightShadowColor)
+                                  lightShadowColor: currentLightShadowColor,
+                                  intensity: currentIntensity)
         }
     }
     
@@ -39,22 +41,25 @@ public class CHNeumorphismView: UIView {
     ///     - curve: direction to apply effect (.outside for convex, .inside for concave)
     ///     - darkShadowColor: shadow color for the dark side (default value is decided based on the background color)
     ///     - lightShadowColor: shadow color for the light side (default value is white)
+    ///     - intensity: intensity of the effect (value between 0 ~ 1, default value is 1)
     public func makeNeumorphismEffect(curve: CHNeumorphismCurve,
                                       darkShadowColor: UIColor? = nil,
-                                      lightShadowColor: UIColor? = nil) {
+                                      lightShadowColor: UIColor? = nil,
+                                      intensity: CGFloat = 1) {
         self.currentCurveDirection = curve
         self.currentDarkShadowColor = darkShadowColor
         self.currentLightShadowColor = lightShadowColor
+        self.currentIntensity = intensity
         switch curve {
         case .inside:
-            makeConcaveEffect(darkShadowColor: darkShadowColor, lightShadowColor: lightShadowColor)
+            makeConcaveEffect(darkShadowColor: darkShadowColor, lightShadowColor: lightShadowColor, intensity: intensity)
         case .outside:
-            makeConvexEffect(darkShadowColor: darkShadowColor, lightShadowColor: lightShadowColor)
+            makeConvexEffect(darkShadowColor: darkShadowColor, lightShadowColor: lightShadowColor, intensity: intensity)
         }
     }
     
     // MARK: - Private Method
-    private func makeConvexEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil) {
+    private func makeConvexEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil, intensity: CGFloat = 1) {
         blackShadowView.removeFromSuperview()
         whiteShadowView.removeFromSuperview()
         
@@ -64,7 +69,7 @@ public class CHNeumorphismView: UIView {
         blackShadowView.translatesAutoresizingMaskIntoConstraints = false
         blackShadowView.clipsToBounds = true
         blackShadowView.layer.shadowColor = darkShadowColor != nil ? darkShadowColor?.cgColor : self.backgroundColor?.makeDarkerColor().cgColor
-        blackShadowView.layer.shadowOpacity = 0.5
+        blackShadowView.layer.shadowOpacity = Float(0.5 * intensity)
         blackShadowView.layer.shadowOffset = CGSize(width: 10, height: 10)
         blackShadowView.layer.shadowRadius = 5
         blackShadowView.layer.shouldRasterize = true
@@ -77,7 +82,7 @@ public class CHNeumorphismView: UIView {
         whiteShadowView.translatesAutoresizingMaskIntoConstraints = false
         whiteShadowView.clipsToBounds = true
         whiteShadowView.layer.shadowColor = lightShadowColor != nil ? lightShadowColor?.cgColor : UIColor.white.cgColor
-        whiteShadowView.layer.shadowOpacity = 0.9
+        whiteShadowView.layer.shadowOpacity = Float(0.9 * intensity)
         whiteShadowView.layer.shadowOffset = CGSize(width: -10, height: -10)
         whiteShadowView.layer.shadowRadius = 5
         whiteShadowView.layer.shouldRasterize = true
@@ -97,7 +102,7 @@ public class CHNeumorphismView: UIView {
         ])
     }
     
-    private func makeConcaveEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil) {
+    private func makeConcaveEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil, intensity: CGFloat = 1) {
         blackShadowView.removeFromSuperview()
         whiteShadowView.removeFromSuperview()
         
@@ -107,7 +112,7 @@ public class CHNeumorphismView: UIView {
         blackShadowView.translatesAutoresizingMaskIntoConstraints = false
         blackShadowView.clipsToBounds = true
         blackShadowView.layer.shadowColor = darkShadowColor != nil ? darkShadowColor?.cgColor : self.backgroundColor?.makeDarkerColor().cgColor
-        blackShadowView.layer.shadowOpacity = 0.5
+        blackShadowView.layer.shadowOpacity = Float(0.5 * intensity)
         blackShadowView.layer.shadowOffset = CGSize(width: 10, height: 10)
         blackShadowView.layer.shadowRadius = 5
         blackShadowView.layer.shouldRasterize = true
@@ -134,7 +139,7 @@ public class CHNeumorphismView: UIView {
         whiteShadowView.translatesAutoresizingMaskIntoConstraints = false
         whiteShadowView.clipsToBounds = true
         whiteShadowView.layer.shadowColor = lightShadowColor != nil ? lightShadowColor?.cgColor : UIColor.white.cgColor
-        whiteShadowView.layer.shadowOpacity = 0.9
+        whiteShadowView.layer.shadowOpacity = Float(0.9 * intensity)
         whiteShadowView.layer.shadowOffset = CGSize(width: -10, height: -10)
         whiteShadowView.layer.shadowRadius = 5
         whiteShadowView.layer.shouldRasterize = true
