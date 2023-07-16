@@ -1,12 +1,21 @@
 import UIKit
 
 public class CHNeumorphismView: UIView {
+    // MARK: - Public DataType
+    public enum CHNeumorphismCurve {
+        case inside
+        case outside
+    }
+    
+    // MARK: - Private Properties
     private var blackShadowView = UIView()
     private var whiteShadowView = UIView()
     
     private var currentCurveDirection: CHNeumorphismCurve?
     private var currentDarkShadowColor: UIColor? = nil
     private var currentLightShadowColor: UIColor? = nil
+    
+    // MARK: - Inspectabl Property
     @IBInspectable public var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -24,11 +33,12 @@ public class CHNeumorphismView: UIView {
         }
     }
     
-    public enum CHNeumorphismCurve {
-        case inside
-        case outside
-    }
-    
+    // MARK: - Public Method
+    /// Apply neumorphism effect to the CHNeumorphismView
+    /// - Parameters:
+    ///     - curve: direction to apply effect (.outside for convex, .inside for concave)
+    ///     - darkShadowColor: shadow color for the dark side (default value is decided based on the background color)
+    ///     - lightShadowColor: shadow color for the light side (default value is white)
     public func makeNeumorphismEffect(curve: CHNeumorphismCurve,
                                       darkShadowColor: UIColor? = nil,
                                       lightShadowColor: UIColor? = nil) {
@@ -43,6 +53,7 @@ public class CHNeumorphismView: UIView {
         }
     }
     
+    // MARK: - Private Method
     private func makeConvexEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil) {
         blackShadowView.removeFromSuperview()
         whiteShadowView.removeFromSuperview()

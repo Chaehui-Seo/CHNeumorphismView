@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIColor {
+    // MAR: - hsl color
     struct HSL: Hashable {
         var hue: CGFloat // 0 - 360
         var saturation: CGFloat // 0 - 100
@@ -45,6 +46,7 @@ extension UIColor {
         self.init(hue: h, saturation: s, brightness: b, alpha: alpha)
     }
     
+    // MARK: - Make dark shadow color based on the origional color
     func makeDarkerColor(alpha: CGFloat = 1.0) -> UIColor {
         let h = self.hsl.hue / 360.0
         var s = self.hsl.saturation / 100 > 0.3 ? 0.3 : 0.0
