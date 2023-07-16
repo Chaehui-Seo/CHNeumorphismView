@@ -58,6 +58,41 @@ public class CHNeumorphismView: UIView {
         }
     }
     
+    public func changeCurveDirection(to curve: CHNeumorphismCurve) {
+        self.currentCurveDirection = curve
+        makeNeumorphismEffect(curve: curve,
+                              darkShadowColor: currentDarkShadowColor,
+                              lightShadowColor: currentLightShadowColor,
+                              intensity: currentIntensity)
+    }
+    
+    public func changeDarkShadowColor(to darkShadowColor: UIColor) {
+        guard let curve = currentCurveDirection else { return }
+        self.currentDarkShadowColor = darkShadowColor
+        makeNeumorphismEffect(curve: curve,
+                              darkShadowColor: darkShadowColor,
+                              lightShadowColor: currentLightShadowColor,
+                              intensity: currentIntensity)
+    }
+    
+    public func changeLightShadowColor(to lightShadowColor: UIColor) {
+        guard let curve = currentCurveDirection else { return }
+        self.currentLightShadowColor = lightShadowColor
+        makeNeumorphismEffect(curve: curve,
+                              darkShadowColor: currentDarkShadowColor,
+                              lightShadowColor: lightShadowColor,
+                              intensity: currentIntensity)
+    }
+    
+    public func changeEffectIntensity(to intensity: CGFloat) {
+        guard let curve = currentCurveDirection else { return }
+        self.currentIntensity = intensity
+        makeNeumorphismEffect(curve: curve,
+                              darkShadowColor: currentDarkShadowColor,
+                              lightShadowColor: currentLightShadowColor,
+                              intensity: intensity)
+    }
+    
     // MARK: - Private Method
     private func makeConvexEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil, intensity: CGFloat = 1) {
         blackShadowView.removeFromSuperview()
