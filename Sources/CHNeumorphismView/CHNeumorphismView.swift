@@ -186,7 +186,7 @@ public class CHNeumorphismView: UIView {
         whiteShadowView.translatesAutoresizingMaskIntoConstraints = false
         whiteShadowView.clipsToBounds = true
         whiteShadowView.layer.shadowColor = lightShadowColor != nil ? lightShadowColor?.cgColor : UIColor.white.cgColor
-        whiteShadowView.layer.shadowOpacity = Float(0.9 * intensity)
+        whiteShadowView.layer.shadowOpacity = Float(0.7 * intensity) // Shadow of concave effect could cover the contents of the view. Therefore, default opacity value should be more transparent than the one in convex effect
         whiteShadowView.layer.shadowOffset = CGSize(width: -10, height: -10)
         whiteShadowView.layer.shadowRadius = 5
         whiteShadowView.layer.shouldRasterize = true
