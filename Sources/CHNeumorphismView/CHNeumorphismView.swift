@@ -58,6 +58,9 @@ public class CHNeumorphismView: UIView {
         }
     }
     
+    /// Change neumorphism effect curve direction
+    /// - Parameters:
+    ///     - to: direction to apply effect (.outside for convex, .inside for concave)
     public func changeCurveDirection(to curve: CHNeumorphismCurve) {
         self.currentCurveDirection = curve
         makeNeumorphismEffect(curve: curve,
@@ -66,6 +69,9 @@ public class CHNeumorphismView: UIView {
                               intensity: currentIntensity)
     }
     
+    /// Change dark shadow color
+    /// - Parameters:
+    ///     - to: shadow color for the dark side
     public func changeDarkShadowColor(to darkShadowColor: UIColor) {
         guard let curve = currentCurveDirection else { return }
         self.currentDarkShadowColor = darkShadowColor
@@ -75,6 +81,9 @@ public class CHNeumorphismView: UIView {
                               intensity: currentIntensity)
     }
     
+    /// Change light shadow color
+    /// - Parameters:
+    ///     - to: shadow color for the light side
     public func changeLightShadowColor(to lightShadowColor: UIColor) {
         guard let curve = currentCurveDirection else { return }
         self.currentLightShadowColor = lightShadowColor
@@ -84,6 +93,9 @@ public class CHNeumorphismView: UIView {
                               intensity: currentIntensity)
     }
     
+    /// Change intensity of neumorphism effect
+    /// - Parameters:
+    ///     - to: intensity of the effect (value between 0 ~ 1)
     public func changeEffectIntensity(to intensity: CGFloat) {
         guard let curve = currentCurveDirection else { return }
         self.currentIntensity = intensity
