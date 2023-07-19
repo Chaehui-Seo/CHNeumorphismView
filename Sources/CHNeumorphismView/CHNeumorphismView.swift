@@ -116,8 +116,8 @@ public class CHNeumorphismView: UIView {
         blackShadowView.translatesAutoresizingMaskIntoConstraints = false
         blackShadowView.clipsToBounds = true
         blackShadowView.layer.shadowColor = darkShadowColor != nil ? darkShadowColor?.cgColor : self.backgroundColor?.makeDarkerColor().cgColor
-        blackShadowView.layer.shadowOpacity = Float(0.5 * intensity)
-        blackShadowView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        blackShadowView.layer.shadowOpacity = Float(0.8 * intensity)
+        blackShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
         blackShadowView.layer.shadowRadius = 5
         blackShadowView.layer.shouldRasterize = true
         blackShadowView.layer.masksToBounds = false
@@ -129,8 +129,8 @@ public class CHNeumorphismView: UIView {
         whiteShadowView.translatesAutoresizingMaskIntoConstraints = false
         whiteShadowView.clipsToBounds = true
         whiteShadowView.layer.shadowColor = lightShadowColor != nil ? lightShadowColor?.cgColor : UIColor.white.cgColor
-        whiteShadowView.layer.shadowOpacity = Float(0.9 * intensity)
-        whiteShadowView.layer.shadowOffset = CGSize(width: -10, height: -10)
+        whiteShadowView.layer.shadowOpacity = Float(0.8 * intensity)
+        whiteShadowView.layer.shadowOffset = CGSize(width: -5, height: -5)
         whiteShadowView.layer.shadowRadius = 5
         whiteShadowView.layer.shouldRasterize = true
         whiteShadowView.layer.masksToBounds = false
@@ -159,8 +159,8 @@ public class CHNeumorphismView: UIView {
         blackShadowView.translatesAutoresizingMaskIntoConstraints = false
         blackShadowView.clipsToBounds = true
         blackShadowView.layer.shadowColor = darkShadowColor != nil ? darkShadowColor?.cgColor : self.backgroundColor?.makeDarkerColor().cgColor
-        blackShadowView.layer.shadowOpacity = Float(0.5 * intensity)
-        blackShadowView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        blackShadowView.layer.shadowOpacity = Float(0.8 * intensity)
+        blackShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
         blackShadowView.layer.shadowRadius = 5
         blackShadowView.layer.shouldRasterize = true
         blackShadowView.layer.masksToBounds = true
@@ -186,8 +186,8 @@ public class CHNeumorphismView: UIView {
         whiteShadowView.translatesAutoresizingMaskIntoConstraints = false
         whiteShadowView.clipsToBounds = true
         whiteShadowView.layer.shadowColor = lightShadowColor != nil ? lightShadowColor?.cgColor : UIColor.white.cgColor
-        whiteShadowView.layer.shadowOpacity = Float(0.7 * intensity) // Shadow of concave effect could cover the contents of the view. Therefore, default opacity value should be more transparent than the one in convex effect
-        whiteShadowView.layer.shadowOffset = CGSize(width: -10, height: -10)
+        whiteShadowView.layer.shadowOpacity = Float(0.8 * intensity) // Shadow of concave effect could cover the contents of the view. Therefore, default opacity value should be more transparent than the one in convex effect
+        whiteShadowView.layer.shadowOffset = CGSize(width: -5, height: -5)
         whiteShadowView.layer.shadowRadius = 5
         whiteShadowView.layer.shouldRasterize = true
         whiteShadowView.layer.masksToBounds = true
