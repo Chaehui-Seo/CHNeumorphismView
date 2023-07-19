@@ -8,7 +8,7 @@
 import UIKit
 import CHNeumorphismView
 
-class ViewController: UIViewController {
+class SampleAppViewController: UIViewController {
     @IBOutlet weak var squareView1: CHNeumorphismView!
     @IBOutlet weak var squareView2: CHNeumorphismView!
     @IBOutlet weak var squareView3: CHNeumorphismView!
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         intensitySlider.minimumValue = 0
         intensitySlider.maximumValue = 1
-        intensitySlider.value = 0.5
+        intensitySlider.value = 0.8
         cornerSlider.minimumValue = 0
         cornerSlider.maximumValue = 30
         cornerSlider.value = 30
@@ -42,22 +42,22 @@ class ViewController: UIViewController {
         squareView2.cornerRadius = 30
         squareView3.cornerRadius = 30
         squareView4.cornerRadius = 30
-        squareView1.makeNeumorphismEffect(curve: .inside, intensity: 0.5)
-        squareView2.makeNeumorphismEffect(curve: .inside, intensity: 0.5)
-        squareView3.makeNeumorphismEffect(curve: .outside, intensity: 0.5)
-        squareView4.makeNeumorphismEffect(curve: .outside, intensity: 0.5)
+        squareView1.makeNeumorphismEffect(curve: .inside, intensity: 0.8)
+        squareView2.makeNeumorphismEffect(curve: .inside, intensity: 0.8)
+        squareView3.makeNeumorphismEffect(curve: .outside, intensity: 0.8)
+        squareView4.makeNeumorphismEffect(curve: .outside, intensity: 0.8)
         
         rectangleView1.cornerRadius = 30
         rectangleView2.cornerRadius = 30
-        rectangleView1.makeNeumorphismEffect(curve: .outside, intensity: 0.5)
-        rectangleView2.makeNeumorphismEffect(curve: .inside, intensity: 0.5)
+        rectangleView1.makeNeumorphismEffect(curve: .outside, intensity: 0.8)
+        rectangleView2.makeNeumorphismEffect(curve: .inside, intensity: 0.8)
         
-        barView1.cornerRadius = 15
-        barView1.makeNeumorphismEffect(curve: .outside, intensity: 0.5)
-        barView2.cornerRadius = 15
-        barView2.makeNeumorphismEffect(curve: .inside, intensity: 0.5)
-        barProgressView1.layer.cornerRadius = 15
-        barProgressView2.layer.cornerRadius = 15
+        barView1.cornerRadius = 10
+        barView1.makeNeumorphismEffect(curve: .outside, intensity: 0.8)
+        barView2.cornerRadius = 10
+        barView2.makeNeumorphismEffect(curve: .inside, intensity: 0.8)
+        barProgressView1.layer.cornerRadius = 10
+        barProgressView2.layer.cornerRadius = 10
     }
     
     @IBAction func intensityValueChanged(_ sender: Any) {
@@ -88,10 +88,10 @@ class ViewController: UIViewController {
         squareView4.cornerRadius = cornerRadiusValue
         rectangleView1.cornerRadius = cornerRadiusValue
         rectangleView2.cornerRadius = cornerRadiusValue
-        barView1.cornerRadius = cornerRadiusValue / 2
-        barView2.cornerRadius = cornerRadiusValue / 2
-        barProgressView1.layer.cornerRadius = cornerRadiusValue / 2
-        barProgressView2.layer.cornerRadius = cornerRadiusValue / 2
+        barView1.cornerRadius = cornerRadiusValue / 3
+        barView2.cornerRadius = cornerRadiusValue / 3
+        barProgressView1.layer.cornerRadius = cornerRadiusValue / 3
+        barProgressView2.layer.cornerRadius = cornerRadiusValue / 3
     }
     
     @IBAction func colorValueChanged(_ sender: Any) {
@@ -123,8 +123,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetButtonDidTap(_ sender: Any) {
-        intensitySlider.value = 0.5
-        changeIntensity(intensityValue: 0.5)
+        intensitySlider.value = 0.8
+        changeIntensity(intensityValue: 0.8)
         
         cornerSlider.value = 30
         changeCornerRadius(cornerRadiusValue: 30)
