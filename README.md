@@ -1,3 +1,10 @@
 # CHNeumorphismView
+<img width="1280" alt="neumorphism_preview*2" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/b473b892-8e67-476e-8f16-8013fb95cfd5">
 
-A description of this package.
+
+
+Neumorphism is a design style using shadows to make convex or concave effects on the background to express the elements, rather than floating on top of the background.
+### ⚠️ still in progress ⚠️
+
+## Requirements
+- iOS 11.0+
