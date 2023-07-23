@@ -23,3 +23,11 @@ dependencies: [
 METHOD #1 <br>
 Make UIView as neumorphism view by changing the Custom Class to `CHNeumorphismView`.
 <img width="981" alt="explain1" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/88d3dee1-00a3-417c-a0e0-b5b39592423d">
+
+
+Default CHNeumorphismView would look like below.
+| Curve Direction | Intensity | Dark Shadow Color | Light Shadow Color |
+| :-: | :-: | :-: | :-: |
+| Outside (Convex) | 1 (Maximum value) | Based on background Color | White |
+
+<img width="194" alt="defaultValue" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/c69248d9-c04b-4b27-8d01-3450f90b9b18">
