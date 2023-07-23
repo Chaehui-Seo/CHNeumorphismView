@@ -26,7 +26,6 @@ public class CHNeumorphismView: UIView {
             layer.cornerRadius = newValue
             blackShadowView.layer.cornerRadius = newValue
             whiteShadowView.layer.cornerRadius = newValue
-            // To make sure the view adjust the changed cornerRadius, in case neumorphismEffect was set before.
             setEffect()
         }
     }
