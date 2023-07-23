@@ -8,3 +8,12 @@ Neumorphism is a design style using shadows to make convex or concave effects on
 
 ## Requirements
 - iOS 11.0+
+
+## Installation
+### Swift Package Manager
+Use [Swift Package Manager](https://swift.org/package-manager/) by adding following line to `Package.swift`:
+```
+dependencies: [
+ .package(url: "https://github.com/Chaehui-Seo/CHNeumorphismView.git", from: "0.0.1")
+]
+```
