@@ -17,3 +17,9 @@ dependencies: [
  .package(url: "https://github.com/Chaehui-Seo/CHNeumorphismView.git", from: "0.0.1")
 ]
 ```
+
+## Usage
+### Create neumorphismView
+METHOD #1 <br>
+Make UIView as neumorphism view by changing the Custom Class to `CHNeumorphismView`.
+<img width="981" alt="explain1" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/88d3dee1-00a3-417c-a0e0-b5b39592423d">
