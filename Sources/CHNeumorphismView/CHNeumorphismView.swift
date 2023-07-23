@@ -18,6 +18,7 @@ public class CHNeumorphismView: UIView {
     private var currentIntensity: CGFloat = 1
     
     // MARK: - Inspectabl Property
+    /// Value of CHNeumorphismView's corner Radius
     @IBInspectable public var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -30,6 +31,7 @@ public class CHNeumorphismView: UIView {
         }
     }
     
+    /// Whether the direction of effect is convex
     @IBInspectable public var isCurveOutside: Bool {
         get {
             currentCurveDirection = .outside
@@ -47,6 +49,7 @@ public class CHNeumorphismView: UIView {
         }
     }
     
+    /// Intensity value of effect (value between 0 ~ 1, default value is 1)
     @IBInspectable public var effectIntensity: CGFloat {
         get {
             currentIntensity = 1.0
@@ -64,6 +67,7 @@ public class CHNeumorphismView: UIView {
         }
     }
     
+    /// Shadow color of the dark side (default value is decided based on the background color)
     @IBInspectable public var darkShadowColor: UIColor? {
         get {
             currentDarkShadowColor = nil
@@ -75,6 +79,7 @@ public class CHNeumorphismView: UIView {
         }
     }
     
+    /// Shadow color of the light side (default value is white)
     @IBInspectable public var lightShadowColor: UIColor? {
         get {
             currentLightShadowColor = nil
