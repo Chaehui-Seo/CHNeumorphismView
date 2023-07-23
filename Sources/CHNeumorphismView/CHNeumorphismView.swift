@@ -1,5 +1,6 @@
 import UIKit
 
+@IBDesignable
 public class CHNeumorphismView: UIView {
     // MARK: - Public DataType
     public enum CHNeumorphismCurve {
