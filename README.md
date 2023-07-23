@@ -1,5 +1,5 @@
 # CHNeumorphismView
-![neumorphism_preview](https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/758f2356-e45a-42df-9c69-a02a85ec022e)
+<img width="1280" alt="neumorphism_preview*2" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/b473b892-8e67-476e-8f16-8013fb95cfd5">
 
 
 
