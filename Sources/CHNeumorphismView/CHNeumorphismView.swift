@@ -25,14 +25,71 @@ public class CHNeumorphismView: UIView {
             layer.cornerRadius = newValue
             blackShadowView.layer.cornerRadius = newValue
             whiteShadowView.layer.cornerRadius = newValue
-            
             // To make sure the view adjust the changed cornerRadius, in case neumorphismEffect was set before.
-            guard let curve = currentCurveDirection else { return }
-            makeNeumorphismEffect(curve: curve,
-                                  darkShadowColor: currentDarkShadowColor,
-                                  lightShadowColor: currentLightShadowColor,
-                                  intensity: currentIntensity)
+            setEffect()
         }
+    }
+    
+    @IBInspectable public var isCurveOutside: Bool {
+        get {
+            currentCurveDirection = .outside
+            return true
+        }
+        set {
+            switch newValue {
+            case true:
+                currentCurveDirection = .outside
+                setEffect()
+            case false:
+                currentCurveDirection = .inside
+                setEffect()
+            }
+        }
+    }
+    
+    @IBInspectable public var effectIntensity: CGFloat {
+        get {
+            currentIntensity = 1.0
+            return 1.0
+        }
+        set {
+            var tempNewValue = newValue
+            if newValue < 0.0 {
+                tempNewValue = 0.0
+            } else if newValue > 1.0 {
+                tempNewValue = 1.0
+            }
+            currentIntensity = tempNewValue
+            setEffect()
+        }
+    }
+    
+    @IBInspectable public var darkShadowColor: UIColor? {
+        get {
+            currentDarkShadowColor = nil
+            return nil
+        }
+        set {
+            currentDarkShadowColor = newValue
+            setEffect()
+        }
+    }
+    
+    @IBInspectable public var lightShadowColor: UIColor? {
+        get {
+            currentLightShadowColor = nil
+            return nil
+        }
+        set {
+            currentLightShadowColor = newValue
+            setEffect()
+        }
+    }
+    
+    // MARK: -  Initialize method
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        setEffect()
     }
     
     // MARK: - Public Method
@@ -106,6 +163,14 @@ public class CHNeumorphismView: UIView {
     }
     
     // MARK: - Private Method
+    private func setEffect() {
+        guard let curveDirection = currentCurveDirection else { return }
+        makeNeumorphismEffect(curve: curveDirection,
+                              darkShadowColor: currentDarkShadowColor,
+                              lightShadowColor: currentLightShadowColor,
+                              intensity: currentIntensity)
+    }
+    
     private func makeConvexEffect(darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil, intensity: CGFloat = 1) {
         blackShadowView.removeFromSuperview()
         whiteShadowView.removeFromSuperview()
