@@ -66,14 +66,14 @@ class SampleAppViewController: UIViewController {
     }
     
     private func changeIntensity(intensityValue: CGFloat) {
-        squareView1.changeEffectIntensity(to: intensityValue)
-        squareView2.changeEffectIntensity(to: intensityValue)
-        squareView3.changeEffectIntensity(to: intensityValue)
-        squareView4.changeEffectIntensity(to: intensityValue)
-        rectangleView1.changeEffectIntensity(to: intensityValue)
-        rectangleView2.changeEffectIntensity(to: intensityValue)
-        barView1.changeEffectIntensity(to: intensityValue)
-        barView2.changeEffectIntensity(to: intensityValue)
+        squareView1.effectIntensity = intensityValue
+        squareView2.effectIntensity = intensityValue
+        squareView3.effectIntensity = intensityValue
+        squareView4.effectIntensity = intensityValue
+        rectangleView1.effectIntensity = intensityValue
+        rectangleView2.effectIntensity = intensityValue
+        barView1.effectIntensity = intensityValue
+        barView2.effectIntensity = intensityValue
     }
     
     @IBAction func cornerRadiusValueChanged(_ sender: Any) {
@@ -111,15 +111,15 @@ class SampleAppViewController: UIViewController {
         barView1.backgroundColor = color
         barView2.backgroundColor = color
         
-        squareView1.changeDarkShadowColor(to: color.darkerColor())
-        squareView2.changeDarkShadowColor(to: color.darkerColor())
-        squareView3.changeDarkShadowColor(to: color.darkerColor())
-        squareView4.changeDarkShadowColor(to: color.darkerColor())
-        rectangleView1.changeDarkShadowColor(to: color.darkerColor())
-        rectangleView2.changeDarkShadowColor(to: color.darkerColor())
+        squareView1.darkShadowColor = color.darkerColor()
+        squareView2.darkShadowColor = color.darkerColor()
+        squareView3.darkShadowColor = color.darkerColor()
+        squareView4.darkShadowColor = color.darkerColor()
+        rectangleView1.darkShadowColor = color.darkerColor()
+        rectangleView2.darkShadowColor = color.darkerColor()
         
-        barView1.changeDarkShadowColor(to: color.darkerColor())
-        barView2.changeDarkShadowColor(to: color.darkerColor())
+        barView1.darkShadowColor = color.darkerColor()
+        barView2.darkShadowColor = color.darkerColor()
     }
     
     @IBAction func resetButtonDidTap(_ sender: Any) {
