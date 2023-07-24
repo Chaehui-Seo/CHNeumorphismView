@@ -6,10 +6,10 @@
 Neumorphism is a design style using shadows to make convex or concave effects on the background to express the elements, rather than floating on top of the background.
 ### ⚠️ still in progress ⚠️
 
-## Requirements
+# Requirements
 - iOS 11.0+
 
-## Installation
+# Installation
 ### Swift Package Manager
 Use [Swift Package Manager](https://swift.org/package-manager/) by adding following line to `Package.swift`:
 ```
@@ -18,7 +18,7 @@ dependencies: [
 ]
 ```
 
-## Usage
+# Usage
 ### Create neumorphismView
 Make UIView as neumorphism view by changing the Custom Class to `CHNeumorphismView`.
 <img width="981" alt="explain1" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/88d3dee1-00a3-417c-a0e0-b5b39592423d">
@@ -33,7 +33,7 @@ Default CHNeumorphismView would look like below.
 
 
 
-### Change customizing options
+# Customizing options
 All of the customizing options can be set either in the storyboard or with codes.
 You can change it in the storyboard by set the value of the inspectors like below.
 <img width="988" alt="explain2" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/d0b208b0-d93d-48db-ab37-9c6f42d61f6b">
@@ -80,7 +80,7 @@ Or you can modity the options one by one.
     neumorphismView.lightShadowColor = UIColor( ... ) // default value is .white
 ```
 
-## SampleApp
+# SampleApp
 You can run SampleApp Project located in `SampleApp` folder.
 All the functions that provided by the package are testable through the SampleApp project.
 
