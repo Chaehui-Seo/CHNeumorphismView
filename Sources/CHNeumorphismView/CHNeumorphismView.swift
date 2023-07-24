@@ -173,6 +173,7 @@ public class CHNeumorphismView: UIView {
     }
     
     private func makeConcaveEffect(intensity: CGFloat = 1, darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil) {
+        layoutIfNeeded()
         blackShadowView.removeFromSuperview()
         whiteShadowView.removeFromSuperview()
         
