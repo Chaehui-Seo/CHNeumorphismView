@@ -40,43 +40,43 @@ You can change it in the storyboard by set the value of the inspectors like belo
 You can apply the effect with various options at once with public method.
 ```swift
 // MARK: - [Make Neumorphism Effect at once]
-    // Curve Direction is the only essential parameter.
-    neumorphismView.makeNeumorphismEffect(curve: .outside) // for outside curve (= convex)
-    neumorphismView.makeNeumorphismEffect(curve: .inside) // for inside curve (= concave)
+// Curve Direction is the only essential parameter.
+neumorphismView.makeNeumorphismEffect(curve: .outside) // for outside curve (= convex)
+neumorphismView.makeNeumorphismEffect(curve: .inside) // for inside curve (= concave)
     
-    // Intensity is not essential and the default value is 1, which is the maximum value.
-    // Intensity value can be set between 0 ~ 1
-    neumorphismView.makeNeumorphismEffect(curve: .outside, intensity: 0.8)
+// Intensity is not essential and the default value is 1, which is the maximum value.
+// Intensity value can be set between 0 ~ 1
+neumorphismView.makeNeumorphismEffect(curve: .outside, intensity: 0.8)
     
-    // Dark or light shadow color can be set as you want.
-    // If you don't set the color value, dark shadow color will be decided based on the background color,
-    // and light shadow color will be set as white.
-    neumorphismView.makeNeumorphismEffect(curve: .inside, intensity: 0.8, darkShadowColor: UIColor.gray)
-    neumorphismView.makeNeumorphismEffect(curve: .inside, intensity: 0.8, lightShadowColor: UIColor.yellow)
-    neumorphismView.makeNeumorphismEffect(curve: .inside, intensity: 0.8, darkShadowColor: UIColor.gray, lightShadowColor: UIColor.yellow)
+// Dark or light shadow color can be set as you want.
+// If you don't set the color value, dark shadow color will be decided based on the background color,
+// and light shadow color will be set as white.
+neumorphismView.makeNeumorphismEffect(curve: .inside, intensity: 0.8, darkShadowColor: UIColor.gray)
+neumorphismView.makeNeumorphismEffect(curve: .inside, intensity: 0.8, lightShadowColor: UIColor.yellow)
+neumorphismView.makeNeumorphismEffect(curve: .inside, intensity: 0.8, darkShadowColor: UIColor.gray, lightShadowColor: UIColor.yellow)
 ```
 
 Or you can modity the options one by one.
 ```swift
 // MARK: - [Curve Direction]
-    neumorphismView.isCurveOutside = true // for outside curve (= convex)
-    neumorphismView.isCurveOutside = false // for inside curve (= concave)
+neumorphismView.isCurveOutside = true // for outside curve (= convex)
+neumorphismView.isCurveOutside = false // for inside curve (= concave)
 ```
 
 ```swift
 // MARK: - [Effect Intensity]
-    neumorphismView.effectIntensity = 0.5 // value between 0 ~ 1, default value is 1
+neumorphismView.effectIntensity = 0.5 // value between 0 ~ 1, default value is 1
 ```
 
 ```swift
 // MARK: - [Corner Radius]
-    neumorphismView.cornerRadius = 10 // Use it rather than 'layer.cornerRadius' to apply corner to the effect
+neumorphismView.cornerRadius = 10 // Use it rather than 'layer.cornerRadius' to apply corner to the effect
 ```
 
 ```swift
 // MARK: - [Shadow Color]
-    neumorphismView.darkShadowColor = UIColor( ... ) // default value is set based on the background color
-    neumorphismView.lightShadowColor = UIColor( ... ) // default value is .white
+neumorphismView.darkShadowColor = UIColor( ... ) // default value is set based on the background color
+neumorphismView.lightShadowColor = UIColor( ... ) // default value is .white
 ```
 
 # SampleApp
