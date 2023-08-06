@@ -83,7 +83,7 @@ neumorphismView.lightShadowColor = UIColor( ... ) // default value is .white
 You can run SampleApp Project located in `SampleApp` folder.
 All the functions that provided by the package are testable through the SampleApp project.
 
-![Simulator Screen Recording - iPhone 14 Pro - 2023-07-24 at 22 58 31](https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/20c5f9d3-708b-4780-b7cb-4ffa8fa20b7f)
+![Simulator Screen Recording - iPhone 14 Pro - 2023-07-24 at 22 58 31](https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/1dd76ae4-25a5-4b8e-a809-141df03b3866)
 
 # Caution
 Make sure to apply the effect AFTER setting the layout of the target view.
