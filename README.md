@@ -1,5 +1,5 @@
 # CHNeumorphismView
-<img width="1280" alt="frontPhoto" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/14a3b4fb-51c6-48bf-a481-9646a5c8940d">
+<img width="1280" alt="frontPhoto" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/ae547bee-8da3-4e14-aa92-57a3e44396fc">
 
 
 Neumorphism is a design style using shadows below or above the elements to make convex or concave effects.
@@ -20,22 +20,20 @@ dependencies: [
 # Usage
 ### Create neumorphismView
 Make UIView as neumorphism view by changing the Custom Class to `CHNeumorphismView`.
-<img width="981" alt="explain1" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/88d3dee1-00a3-417c-a0e0-b5b39592423d">
+<img width="981" alt="explain1" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/ff352ec0-553d-4325-b9bd-28cdd17549f3">
 
 
 Default CHNeumorphismView would look like below.
 | Curve Direction | Intensity | Dark Shadow Color | Light Shadow Color |
 | :-: | :-: | :-: | :-: |
 | Outside (Convex) | 1 (Maximum value) | Based on background Color | White |
-
-<img width="194" alt="defaultValue" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/c69248d9-c04b-4b27-8d01-3450f90b9b18">
-
+<img width="194" alt="defaultValue" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/bbefdd7c-1b90-4439-8f34-6fa3f885b1b0">
 
 
 # Customizing options
 All of the customizing options can be set either in the storyboard or with codes.
 You can change it in the storyboard by set the value of the inspectors like below.
-<img width="988" alt="explain2" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/d0b208b0-d93d-48db-ab37-9c6f42d61f6b">
+<img width="988" alt="explain2" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/f59e186c-3964-4415-a39a-147053233c96">
 
 You can apply the effect with various options at once with public method.
 ```swift
@@ -83,7 +81,8 @@ neumorphismView.lightShadowColor = UIColor( ... ) // default value is .white
 You can run SampleApp Project located in `SampleApp` folder.
 All the functions that provided by the package are testable through the SampleApp project.
 
-![Simulator Screen Recording - iPhone 14 Pro - 2023-07-24 at 22 58 31](https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/1dd76ae4-25a5-4b8e-a809-141df03b3866)
+![Simulator Screen Recording - iPhone 14 Pro - 2023-08-06 at 19 44 26](https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/42f6ff56-5405-45da-80ac-b30840d1e634)
+
 
 # Caution
 Make sure to apply the effect AFTER setting the layout of the target view.
