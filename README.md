@@ -13,7 +13,7 @@ Neumorphism is a design style using shadows below or above the elements to make 
 Use [Swift Package Manager](https://swift.org/package-manager/) by adding following line to `Package.swift`:
 ```
 dependencies: [
- .package(url: "https://github.com/Chaehui-Seo/CHNeumorphismView.git", from: "0.0.1")
+ .package(url: "https://github.com/Chaehui-Seo/CHNeumorphismView.git", from: "0.0.2")
 ]
 ```
 
