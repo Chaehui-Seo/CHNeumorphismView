@@ -1,5 +1,5 @@
 # CHNeumorphismView
-<img width="1280" alt="frontPhoto" src="https://github.com/Chaehui-Seo/CHNeumorphismView/assets/73422344/ae547bee-8da3-4e14-aa92-57a3e44396fc">
+<img width="1280" alt="frontPhoto" src="https://github.com/user-attachments/assets/13d5ffe4-f8ea-46c9-9dba-5c8fdc43c5aa">
 
 
 Neumorphism is a design style using shadows below or above the elements to make convex or concave effects.
