@@ -2,7 +2,6 @@
 <img width="1280" alt="frontPhoto" src="https://github.com/user-attachments/assets/36bdac3a-7ac3-4bd5-9dee-d32efc4b84fb">
 
 Neumorphism is a design style using shadows below or above the elements to make convex or concave effects.
-### ⚠️ still in progress ⚠️
 
 # Requirements
 - iOS 11.0+
@@ -12,7 +11,7 @@ Neumorphism is a design style using shadows below or above the elements to make 
 Use [Swift Package Manager](https://swift.org/package-manager/) by adding following line to `Package.swift`:
 ```
 dependencies: [
- .package(url: "https://github.com/Chaehui-Seo/CHNeumorphismView.git", from: "0.0.2")
+ .package(url: "https://github.com/Chaehui-Seo/CHNeumorphismView.git", from: "1.0.0")
 ]
 ```
 
@@ -84,4 +83,5 @@ All the functions that provided by the package are testable through the SampleAp
 
 
 # Caution
-Make sure to apply the effect AFTER setting the layout of the target view.
+- Make sure to apply the effect AFTER setting the layout of the target view.
+- Since neumorphism UI uses shadows to express depth, transparent colors(alpha < 1) are NOT recommended as a background color.
