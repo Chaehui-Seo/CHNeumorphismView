@@ -9,8 +9,8 @@ public class CHNeumorphismView: UIView {
     }
     
     // MARK: - Private Properties
-    private var blackShadowView = UIView()
-    private var whiteShadowView = UIView()
+    private var darkShadowView = UIView()
+    private var lightShadowView = UIView()
     
     private var currentCurveDirection: CHNeumorphismCurve?
     private var currentDarkShadowColor: UIColor? = nil
@@ -25,8 +25,8 @@ public class CHNeumorphismView: UIView {
         }
         set {
             layer.cornerRadius = newValue
-            blackShadowView.layer.cornerRadius = newValue
-            whiteShadowView.layer.cornerRadius = newValue
+            darkShadowView.layer.cornerRadius = newValue
+            lightShadowView.layer.cornerRadius = newValue
             setEffect()
         }
     }
@@ -130,131 +130,131 @@ public class CHNeumorphismView: UIView {
     }
     
     private func makeConvexEffect(intensity: CGFloat = 1, darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil) {
-        blackShadowView.removeFromSuperview()
-        whiteShadowView.removeFromSuperview()
+        darkShadowView.removeFromSuperview()
+        lightShadowView.removeFromSuperview()
         
-        blackShadowView = UIView(frame: self.bounds)
-        blackShadowView.backgroundColor = darkShadowColor != nil 
+        darkShadowView = UIView(frame: self.bounds)
+        darkShadowView.backgroundColor = darkShadowColor != nil
                                             ? darkShadowColor
                                             : self.backgroundColor?.makeDarkerColor()
-        blackShadowView.layer.cornerRadius = self.layer.cornerRadius
-        blackShadowView.translatesAutoresizingMaskIntoConstraints = false
-        blackShadowView.clipsToBounds = true
-        blackShadowView.layer.shadowColor = darkShadowColor != nil 
+        darkShadowView.layer.cornerRadius = self.layer.cornerRadius
+        darkShadowView.translatesAutoresizingMaskIntoConstraints = false
+        darkShadowView.clipsToBounds = true
+        darkShadowView.layer.shadowColor = darkShadowColor != nil
                                             ? darkShadowColor?.cgColor
                                             : self.backgroundColor?.makeDarkerColor().cgColor
-        blackShadowView.layer.shadowOpacity = Float(0.8 * intensity)
-        blackShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        blackShadowView.layer.shadowRadius = 5
-        blackShadowView.layer.shouldRasterize = true
-        blackShadowView.layer.masksToBounds = false
+        darkShadowView.layer.shadowOpacity = Float(0.8 * intensity)
+        darkShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        darkShadowView.layer.shadowRadius = 5
+        darkShadowView.layer.shouldRasterize = true
+        darkShadowView.layer.masksToBounds = false
         
         
-        whiteShadowView = UIView(frame: self.bounds)
-        whiteShadowView.backgroundColor = self.backgroundColor
-        whiteShadowView.layer.cornerRadius = self.layer.cornerRadius
-        whiteShadowView.translatesAutoresizingMaskIntoConstraints = false
-        whiteShadowView.clipsToBounds = true
-        whiteShadowView.layer.shadowColor = lightShadowColor != nil 
+        lightShadowView = UIView(frame: self.bounds)
+        lightShadowView.backgroundColor = self.backgroundColor
+        lightShadowView.layer.cornerRadius = self.layer.cornerRadius
+        lightShadowView.translatesAutoresizingMaskIntoConstraints = false
+        lightShadowView.clipsToBounds = true
+        lightShadowView.layer.shadowColor = lightShadowColor != nil
                                             ? lightShadowColor?.cgColor
                                             : UIColor.white.cgColor
-        whiteShadowView.layer.shadowOpacity = Float(0.8 * intensity)
-        whiteShadowView.layer.shadowOffset = CGSize(width: -5, height: -5)
-        whiteShadowView.layer.shadowRadius = 5
-        whiteShadowView.layer.shouldRasterize = true
-        whiteShadowView.layer.masksToBounds = false
+        lightShadowView.layer.shadowOpacity = Float(0.8 * intensity)
+        lightShadowView.layer.shadowOffset = CGSize(width: -5, height: -5)
+        lightShadowView.layer.shadowRadius = 5
+        lightShadowView.layer.shouldRasterize = true
+        lightShadowView.layer.masksToBounds = false
         
-        self.superview?.insertSubview(blackShadowView, belowSubview: self)
-        self.superview?.insertSubview(whiteShadowView, belowSubview: self)
+        self.superview?.insertSubview(darkShadowView, belowSubview: self)
+        self.superview?.insertSubview(lightShadowView, belowSubview: self)
         NSLayoutConstraint.activate([
-            blackShadowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            blackShadowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            blackShadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            blackShadowView.topAnchor.constraint(equalTo: self.topAnchor),
-            whiteShadowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            whiteShadowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            whiteShadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            whiteShadowView.topAnchor.constraint(equalTo: self.topAnchor),
+            darkShadowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            darkShadowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            darkShadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            darkShadowView.topAnchor.constraint(equalTo: self.topAnchor),
+            lightShadowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            lightShadowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            lightShadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            lightShadowView.topAnchor.constraint(equalTo: self.topAnchor),
         ])
     }
     
     private func makeConcaveEffect(intensity: CGFloat = 1, darkShadowColor: UIColor? = nil, lightShadowColor: UIColor? = nil) {
         layoutIfNeeded()
-        blackShadowView.removeFromSuperview()
-        whiteShadowView.removeFromSuperview()
+        darkShadowView.removeFromSuperview()
+        lightShadowView.removeFromSuperview()
         
         // Black shadow setting
-        blackShadowView = UIView(frame: self.bounds)
-        blackShadowView.layer.cornerRadius = self.layer.cornerRadius
-        blackShadowView.translatesAutoresizingMaskIntoConstraints = false
-        blackShadowView.clipsToBounds = true
-        blackShadowView.layer.shadowColor = darkShadowColor != nil 
+        darkShadowView = UIView(frame: self.bounds)
+        darkShadowView.layer.cornerRadius = self.layer.cornerRadius
+        darkShadowView.translatesAutoresizingMaskIntoConstraints = false
+        darkShadowView.clipsToBounds = true
+        darkShadowView.layer.shadowColor = darkShadowColor != nil
                                             ? darkShadowColor?.cgColor
                                             : self.backgroundColor?.makeDarkerColor().cgColor
-        blackShadowView.layer.shadowOpacity = Float(0.8 * intensity)
-        blackShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        blackShadowView.layer.shadowRadius = 5
-        blackShadowView.layer.shouldRasterize = true
-        blackShadowView.layer.masksToBounds = true
+        darkShadowView.layer.shadowOpacity = Float(0.8 * intensity)
+        darkShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        darkShadowView.layer.shadowRadius = 5
+        darkShadowView.layer.shouldRasterize = true
+        darkShadowView.layer.masksToBounds = true
         
-        let blackPath = UIBezierPath()
-        blackPath.move(to: CGPoint(x: 0, y: self.bounds.height))
-        blackPath.addLine(to: CGPoint(x: -50, y: self.bounds.height))
-        blackPath.addLine(to: CGPoint(x: -50, y: -50))
-        blackPath.addLine(to: CGPoint(x: self.bounds.width, y: -50))
-        blackPath.addLine(to: CGPoint(x: self.bounds.width, y: 0))
-        blackPath.addLine(to: CGPoint(x: self.layer.cornerRadius, y: 0))
-        blackPath.addArc(withCenter: CGPoint(x: self.layer.cornerRadius, y: self.layer.cornerRadius), radius: self.layer.cornerRadius, startAngle: .pi * 3 / 2, endAngle: .pi, clockwise: false)
-        blackPath.close()
+        let darkPath = UIBezierPath()
+        darkPath.move(to: CGPoint(x: 0, y: self.bounds.height))
+        darkPath.addLine(to: CGPoint(x: -50, y: self.bounds.height))
+        darkPath.addLine(to: CGPoint(x: -50, y: -50))
+        darkPath.addLine(to: CGPoint(x: self.bounds.width, y: -50))
+        darkPath.addLine(to: CGPoint(x: self.bounds.width, y: 0))
+        darkPath.addLine(to: CGPoint(x: self.layer.cornerRadius, y: 0))
+        darkPath.addArc(withCenter: CGPoint(x: self.layer.cornerRadius, y: self.layer.cornerRadius), radius: self.layer.cornerRadius, startAngle: .pi * 3 / 2, endAngle: .pi, clockwise: false)
+        darkPath.close()
         
-        let blackShapeLayer = CAShapeLayer()
-        blackShapeLayer.path = blackPath.cgPath
-        blackShapeLayer.fillColor = darkShadowColor != nil
+        let darkShapeLayer = CAShapeLayer()
+        darkShapeLayer.path = darkPath.cgPath
+        darkShapeLayer.fillColor = darkShadowColor != nil
                                     ? darkShadowColor?.cgColor
                                     : self.backgroundColor?.makeDarkerColor().cgColor
-        blackShadowView.layer.addSublayer(blackShapeLayer)
+        darkShadowView.layer.addSublayer(darkShapeLayer)
         
         // White shadow setting
-        whiteShadowView = UIView(frame: self.bounds)
-        whiteShadowView.layer.cornerRadius = self.layer.cornerRadius
-        whiteShadowView.translatesAutoresizingMaskIntoConstraints = false
-        whiteShadowView.clipsToBounds = true
-        whiteShadowView.layer.shadowColor = lightShadowColor != nil 
+        lightShadowView = UIView(frame: self.bounds)
+        lightShadowView.layer.cornerRadius = self.layer.cornerRadius
+        lightShadowView.translatesAutoresizingMaskIntoConstraints = false
+        lightShadowView.clipsToBounds = true
+        lightShadowView.layer.shadowColor = lightShadowColor != nil
                                             ? lightShadowColor?.cgColor
                                             : UIColor.white.cgColor
-        whiteShadowView.layer.shadowOpacity = Float(0.8 * intensity) // Shadow of concave effect could cover the contents of the view. Therefore, default opacity value should be more transparent than the one in convex effect
-        whiteShadowView.layer.shadowOffset = CGSize(width: -5, height: -5)
-        whiteShadowView.layer.shadowRadius = 5
-        whiteShadowView.layer.shouldRasterize = true
-        whiteShadowView.layer.masksToBounds = true
+        lightShadowView.layer.shadowOpacity = Float(0.8 * intensity) // Shadow of concave effect could cover the contents of the view. Therefore, default opacity value should be more transparent than the one in convex effect
+        lightShadowView.layer.shadowOffset = CGSize(width: -5, height: -5)
+        lightShadowView.layer.shadowRadius = 5
+        lightShadowView.layer.shouldRasterize = true
+        lightShadowView.layer.masksToBounds = true
         
-        let whitePath = UIBezierPath()
-        whitePath.move(to: CGPoint(x: self.bounds.width, y: 0))
-        whitePath.addLine(to: CGPoint(x: self.bounds.width + 50, y: 0))
-        whitePath.addLine(to: CGPoint(x: self.bounds.width + 50, y: self.bounds.height + 50))
-        whitePath.addLine(to: CGPoint(x: 0, y: self.bounds.height + 50))
-        whitePath.addLine(to: CGPoint(x: 0, y: self.bounds.height))
-        whitePath.addLine(to: CGPoint(x: self.bounds.width - self.layer.cornerRadius, y: self.bounds.height))
-        whitePath.addArc(withCenter: CGPoint(x: self.bounds.width - self.layer.cornerRadius, y: self.bounds.height - self.layer.cornerRadius), radius: self.layer.cornerRadius, startAngle: .pi / 2, endAngle: 0, clockwise: false)
-        whitePath.close()
+        let lightPath = UIBezierPath()
+        lightPath.move(to: CGPoint(x: self.bounds.width, y: 0))
+        lightPath.addLine(to: CGPoint(x: self.bounds.width + 50, y: 0))
+        lightPath.addLine(to: CGPoint(x: self.bounds.width + 50, y: self.bounds.height + 50))
+        lightPath.addLine(to: CGPoint(x: 0, y: self.bounds.height + 50))
+        lightPath.addLine(to: CGPoint(x: 0, y: self.bounds.height))
+        lightPath.addLine(to: CGPoint(x: self.bounds.width - self.layer.cornerRadius, y: self.bounds.height))
+        lightPath.addArc(withCenter: CGPoint(x: self.bounds.width - self.layer.cornerRadius, y: self.bounds.height - self.layer.cornerRadius), radius: self.layer.cornerRadius, startAngle: .pi / 2, endAngle: 0, clockwise: false)
+        lightPath.close()
         
-        let whiteShapeLayer = CAShapeLayer()
-        whiteShapeLayer.path = whitePath.cgPath
-        whiteShapeLayer.fillColor = self.backgroundColor?.cgColor
-        whiteShadowView.layer.addSublayer(whiteShapeLayer)
+        let lightShapeLayer = CAShapeLayer()
+        lightShapeLayer.path = lightPath.cgPath
+        lightShapeLayer.fillColor = self.backgroundColor?.cgColor
+        lightShadowView.layer.addSublayer(lightShapeLayer)
         
         // Add set shadows
-        self.addSubview(blackShadowView)
-        self.addSubview(whiteShadowView)
+        self.addSubview(darkShadowView)
+        self.addSubview(lightShadowView)
         NSLayoutConstraint.activate([
-            blackShadowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            blackShadowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            blackShadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            blackShadowView.topAnchor.constraint(equalTo: self.topAnchor),
-            whiteShadowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            whiteShadowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            whiteShadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            whiteShadowView.topAnchor.constraint(equalTo: self.topAnchor),
+            darkShadowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            darkShadowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            darkShadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            darkShadowView.topAnchor.constraint(equalTo: self.topAnchor),
+            lightShadowView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            lightShadowView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            lightShadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            lightShadowView.topAnchor.constraint(equalTo: self.topAnchor),
         ])
     }
 }
