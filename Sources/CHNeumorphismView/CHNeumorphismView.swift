@@ -183,7 +183,7 @@ public class CHNeumorphismView: UIView {
         darkShadowView.removeFromSuperview()
         lightShadowView.removeFromSuperview()
         
-        // Black shadow setting
+        // Dark shadow setting
         darkShadowView = UIView(frame: self.bounds)
         darkShadowView.layer.cornerRadius = self.layer.cornerRadius
         darkShadowView.translatesAutoresizingMaskIntoConstraints = false
@@ -214,7 +214,7 @@ public class CHNeumorphismView: UIView {
                                     : self.backgroundColor?.makeDarkerColor().cgColor
         darkShadowView.layer.addSublayer(darkShapeLayer)
         
-        // White shadow setting
+        // Light shadow setting
         lightShadowView = UIView(frame: self.bounds)
         lightShadowView.layer.cornerRadius = self.layer.cornerRadius
         lightShadowView.translatesAutoresizingMaskIntoConstraints = false
