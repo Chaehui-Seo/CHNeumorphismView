@@ -14,6 +14,11 @@ dependencies: [
  .package(url: "https://github.com/Chaehui-Seo/CHNeumorphismView.git", from: "1.0.0")
 ]
 ```
+### Cocoapods
+Use [Cocoapods](https://cocoapods.org/) by adding following line to `Podfile`:
+```
+pod "CHNeumorphismView", "~> 1.0.0"
+```
 
 # Usage
 ### Create neumorphismView
